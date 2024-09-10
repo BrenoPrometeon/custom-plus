@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = ""
+authors = ["BrenoPrometeon <breno.soares.st@prometeon.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+python-dotenv = "^1.0.0"
+msal = "^1.30.0"
+graphemy = "^1.0.2"
+pyodbc = "^5.0.1"
+pydantic-settings = "^2.1.0"
+taskipy = "^1.12.2"
+alembic = "^1.13.1"
+isort = "^5.13.2"
+pyjwt = "^2.9.0"
+black = "^24.8.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.taskipy.tasks]
+run = "uvicorn app.main:app --reload --host 0.0.0.0"
