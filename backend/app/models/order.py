@@ -8,9 +8,14 @@ class Order(Graphemy, table=True):
     payment: str | None
     order_date: date
     delivery_date: date | None
-    quantity: int 
+    quantity: int
+    price: float | None
     discount: int | None
     
     products: list["Product"] = Dl(
         source="product_id", target="id"
+    )
+    
+    products: "Customer" = Dl(
+        source="client_id", target="id"
     )
